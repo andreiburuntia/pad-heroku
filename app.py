@@ -31,9 +31,8 @@ def mail_it():
     except:  
         print ('Something went wrong sending email...')
 
-@app.route('/result',methods = ['POST', 'GET'])
+@app.route('/result', methods = ['POST', 'GET'])
 def result():
-    print("ASDASDASDAS")
     if request.method == 'POST':
         result = request.data
         try:  
