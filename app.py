@@ -9,7 +9,4 @@ def index():
 
 @app.route('/result',methods = ['POST', 'GET'])
 def result():
-    if request.method == 'POST':
-        result = request.data
-        print (result)
-        return render_template("result.html",result = result)
+    return request
