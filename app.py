@@ -6,8 +6,3 @@ app=Flask(__name__)
 def index():
 	return "HI"
 
-@app.route('/req', methods=['GET','POST'])
-	def respond():
-		body=request.values.get('Body', None);
-		print (body)
-		return "got it"
