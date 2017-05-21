@@ -13,5 +13,7 @@ def hello():
 
 @app.route('/result',methods = ['POST', 'GET'])
 def result():
-    data = request.get_data()
-    return data
+    if request.method == 'POST':
+        result = request.data
+        print (result)
+        return render_template("result.html",result = result)
