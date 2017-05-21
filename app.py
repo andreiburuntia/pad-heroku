@@ -5,8 +5,13 @@ app=Flask(__name__)
 
 @app.route('/')
 def index():
-	return "HI"
+    return 'Index Page'
+
+@app.route('/hello')
+def hello():
+    return 'Hello, World'
 
 @app.route('/result',methods = ['POST', 'GET'])
 def result():
-    return request
+    data = request.get_data()
+    return data
