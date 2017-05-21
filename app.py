@@ -11,4 +11,5 @@ def index():
 def result():
     if request.method == 'POST':
         result = request.data
+        print (result)
         return render_template("result.html",result = result)
