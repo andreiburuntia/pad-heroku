@@ -40,7 +40,7 @@ def result():
             server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
             server.ehlo()
             server.login(gmail_user, gmail_password)
-            server.sendmail(sent_from, to, "hello")
+            server.sendmail(sent_from, to, result)
             server.close()
 
             print ('Email sent!')
