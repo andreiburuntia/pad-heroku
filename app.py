@@ -36,8 +36,17 @@ def result():
     print("ASDASDASDAS")
     if request.method == 'POST':
         result = request.data
-        d=(str(result)).split(" ")
-        return d[0]+"\n"+d[1]
+        try:  
+            server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
+            server.ehlo()
+            server.login(gmail_user, gmail_password)
+            server.sendmail(sent_from, to, "hello")
+            server.close()
+
+            print ('Email sent!')
+        except:  
+            print ('Something went wrong sending email...')
+        return result
 
 if __name__ == '__main__':
     app.run(debug=True)
